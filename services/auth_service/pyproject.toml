@@ -1,0 +1,20 @@
+[project]
+name = "auth-service"
+version = "0.1.0"
+description = "Auth Microservice for ElectroStore"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "pydantic-settings>=2.2.1",
+    "pydantic[email]>=2.6.3",
+    "sqlalchemy[asyncio]>=2.0.28",
+    "greenlet>=3.0.3",
+    "asyncpg>=0.29.0",
+    "passlib[bcrypt]>=1.7.4",
+    "bcrypt==4.0.1",
+    "python-jose[cryptography]>=3.3.0",
+    "orjson>=3.9.15",
+    "uvloop>=0.19.0; sys_platform != 'win32'",
+]
