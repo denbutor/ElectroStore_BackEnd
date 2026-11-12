@@ -1,0 +1,166 @@
+networks:
+  electro_net:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:
+
+services:
+  # --- INFRASTRUCTURE ---
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: electro_postgres
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      POSTGRES_DB: ${CATALOG_DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-multiple-dbs.sh:/docker-entrypoint-initdb.d/init-multiple-dbs.sh:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${CATALOG_DB_NAME}"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+
+  redis:
+    image: redis:7-alpine
+    container_name: electro_redis
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes", "--maxmemory", "64mb", "--maxmemory-policy", "noeviction"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 64M
+
+  minio:
+    image: minio/minio:latest
+    container_name: electro_minio
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 100M
+
+  gateway:
+    image: nginx:alpine
+    container_name: electro_gateway
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./gateway/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - auth_service
+      - catalog_service
+      - order_service
+      - ai_service
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 32M
+
+  # --- MICROSERVICES ---
+  auth_service:
+    build: ./services/auth_service
+    container_name: electro_auth_service
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  catalog_service:
+    build: ./services/catalog_service
+    container_name: electro_catalog_service
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./scripts:/scripts:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  order_service:
+    build: ./services/order_service
+    container_name: electro_order_service
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+  ai_service:
+    build: ./services/ai_service
+    container_name: electro_ai_service
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      catalog_service:
+        condition: service_started
+    networks:
+      - electro_net
+    deploy:
+      resources:
+        limits:
+          memory: 128M
