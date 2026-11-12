@@ -1,0 +1,21 @@
+[project]
+name = "catalog-service"
+version = "0.1.0"
+description = "Catalog & Media Microservice for ElectroStore"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "pydantic-settings>=2.2.1",
+    "sqlalchemy[asyncio]>=2.0.28",
+    "greenlet>=3.0.3",
+    "asyncpg>=0.29.0",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "redis>=5.0.3",
+    "minio>=7.2.5",
+    "Pillow>=10.2.0",
+    "python-multipart>=0.0.9",
+    "orjson>=3.9.15",
+    "uvloop>=0.19.0; sys_platform != 'win32'",
+]
