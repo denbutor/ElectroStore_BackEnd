@@ -1,0 +1,18 @@
+[project]
+name = "ai-service"
+version = "0.1.0"
+description = "AI Assistant & RAG Microservice for ElectroStore"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "pydantic-settings>=2.2.1",
+    "sqlalchemy[asyncio]>=2.0.28",
+    "greenlet>=3.0.3",
+    "asyncpg>=0.29.0",
+    "pgvector>=0.2.5",
+    "redis>=5.0.3",
+    "google-generativeai>=0.8.3",
+    "orjson>=3.9.15",
+    "uvloop>=0.19.0; sys_platform != 'win32'",
+]
