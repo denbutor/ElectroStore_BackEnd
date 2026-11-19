@@ -5,6 +5,7 @@ from app.api.v1.cart import router as cart_router
 from app.api.v1.orders import router as orders_router
 from app.db.base import Base, engine
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Автоматичне створення таблиць замовлень
@@ -13,14 +14,18 @@ async def lifespan(app: FastAPI):
     yield
     await engine.dispose()
 
+
 app = FastAPI(
     title="ElectroStore Order & Cart Service",
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
+    docs_url="/api/v1/orders/docs",
+    openapi_url="/api/v1/orders/openapi.json",
 )
 
 app.include_router(cart_router, prefix="/api/v1")
 app.include_router(orders_router, prefix="/api/v1")
+
 
 @app.get("/health", tags=["System"])
 async def health_check():

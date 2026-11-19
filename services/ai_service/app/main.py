@@ -12,19 +12,34 @@ from app.services.event_consumer import consume_product_events
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Очікуємо створення таблиці products сервісом каталогу та додаємо векторну колонку
+    ready = False
+    last_err: Exception | None = None
+
     for _ in range(15):
         try:
             async with engine.begin() as conn:
                 await conn.execute(text("CREATE EXTENSION IF NOT EXISTS vector;"))
                 check = await conn.execute(
-                    text("SELECT 1 FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'products'")
+                    text(
+                        "SELECT 1 FROM information_schema.tables "
+                        "WHERE table_schema = 'public' AND table_name = 'products'"
+                    )
                 )
                 if check.scalar():
-                    await conn.execute(text("ALTER TABLE products ADD COLUMN IF NOT EXISTS embedding vector(768);"))
+                    await conn.execute(
+                        text(
+                            "ALTER TABLE products "
+                            "ADD COLUMN IF NOT EXISTS embedding vector(768);"
+                        )
+                    )
+                    ready = True
                     break
-        except Exception:
-            pass
+        except Exception as exc:
+            last_err = exc
         await asyncio.sleep(1)
+
+    if not ready and last_err is not None:
+        print(f"Попередження при ініціалізації pgvector/products: {last_err}")
 
     # Запуск фонового читача черги Redis Streams
     consumer_task = asyncio.create_task(consume_product_events())
@@ -45,6 +60,7 @@ app = FastAPI(
     title="ElectroStore AI & RAG Service",
     default_response_class=ORJSONResponse,
     lifespan=lifespan,
+    root_path="/api/v1/ai",
 )
 
 app.include_router(chat_router, prefix="/api/v1")

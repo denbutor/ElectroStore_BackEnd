@@ -5,7 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 from app.db.base import Base
 
 class ProductVector(Base):
-    __tablename__ = "products" # Вказуємо на існуючу таблицю в catalog_db
+    __tablename__ = "products"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     title: Mapped[str] = mapped_column(String)

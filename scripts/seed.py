@@ -1,86 +1,3 @@
-# import asyncio
-# import json
-# import os
-# from sqlalchemy.ext.asyncio import create_async_engine
-# from sqlalchemy import text
-# # from passlib.context import CryptContext
-# import bcrypt
-
-# # pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-# # Отримуємо доступи з оточення контейнера
-# DB_USER = os.getenv("POSTGRES_USER", "electro_admin")
-# DB_PASS = os.getenv("POSTGRES_PASSWORD", "secret_password_123")
-# DB_HOST = os.getenv("POSTGRES_HOST", "postgres")
-
-# AUTH_DB_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASS}@{DB_HOST}:5432/auth_db"
-# CATALOG_DB_URL = f"postgresql+asyncpg://{DB_USER}:{DB_PASS}@{DB_HOST}:5432/catalog_db"
-
-# async def seed_auth():
-#     engine = create_async_engine(AUTH_DB_URL)
-#     async with engine.begin() as conn:
-#         print("Seeding Admin User...")
-#         # hashed_pw = pwd_context.hash("admin123")
-#         raw_password = b"adminpassword123"
-#         hashed_pw = bcrypt.hashpw(raw_password, bcrypt.gensalt()).decode("utf-8")
-#         await conn.execute(
-#             text("""
-#             INSERT INTO users (email, hashed_password, full_name, role, is_active) 
-#             VALUES (:email, :pw, :name, :role, true)
-#             ON CONFLICT (email) DO NOTHING
-#             """),
-#             {"email": "admin@electro.com", "pw": hashed_pw, "name": "System Admin", "role": "admin"}
-#         )
-#     await engine.dispose()
-
-# async def seed_catalog():
-#     engine = create_async_engine(CATALOG_DB_URL)
-#     async with engine.begin() as conn:
-#         print("Seeding Categories...")
-#         await conn.execute(text("INSERT INTO categories (id, name) VALUES (1, 'Процесори'), (2, 'Материнські плати') ON CONFLICT DO NOTHING"))
-        
-#         print("Seeding Products...")
-#         products = [
-#             {
-#                 "title": "AMD Ryzen 5 7600X",
-#                 "description": "Потужний процесор для ігор",
-#                 "price": 9500.00,
-#                 "stock": 10,
-#                 "category_id": 1,
-#                 "specs": json.dumps({"socket": "AM5", "tdp": 105, "ram_type": "DDR5"})
-#             },
-#             {
-#                 "title": "ASUS TUF GAMING B650-PLUS",
-#                 "description": "Надійна плата формату ATX",
-#                 "price": 8200.00,
-#                 "stock": 5,
-#                 "category_id": 2,
-#                 "specs": json.dumps({"socket": "AM5", "form_factor": "ATX", "ram_type": "DDR5"})
-#             }
-#         ]
-        
-#         for p in products:
-#             await conn.execute(
-#                 text("""
-#                 INSERT INTO products (title, description, price, stock, category_id, specifications, is_active)
-#                 VALUES (:title, :description, :price, :stock, :category_id, :specs::jsonb, true)
-#                 ON CONFLICT DO NOTHING
-#                 """),
-#                 p
-#             )
-#     await engine.dispose()
-
-# async def main():
-#     try:
-#         await seed_auth()
-#         await seed_catalog()
-#         print("✅ Database seeding completed successfully!")
-#     except Exception as e:
-#         print(f"❌ Seeding failed: {e}")
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
-
 import asyncio
 import json
 import os
@@ -215,7 +132,7 @@ async def seed():
         print("✅ Database seeding completed successfully!")
 
     except Exception as e:
-        print(f"❌ Seeding failed: {e}")
+        print(f"Seeding failed: {e}")
 
 
 if __name__ == "__main__":

@@ -9,7 +9,7 @@ class Order(Base):
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     user_id: Mapped[int] = mapped_column(Integer, index=True, nullable=False)
     
-    # Статуси: pending_payment, paid, shipped, cancelled
+    # Statuses: pending_payment, paid, shipped, cancelled
     status: Mapped[str] = mapped_column(String, default="pending_payment", nullable=False)
     total_amount: Mapped[float] = mapped_column(Float, nullable=False)
     shipping_address: Mapped[str] = mapped_column(String, nullable=False)
