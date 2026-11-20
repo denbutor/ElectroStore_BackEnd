@@ -13,6 +13,8 @@ class Settings(BaseSettings):
 
     GEMINI_API_KEY: str
 
+    ENABLE_GOOGLE_SEARCH: bool = False
+
     @property
     def DATABASE_URL(self) -> str:
         return (

@@ -37,11 +37,27 @@ async def chat_stream(
 
     # 3. Системна інструкція з контекстом товарів
     system_instruction = (
-        "Ти професійний консультант магазину ElectroStore. "
-        "Твоя задача — допомагати у виборі техніки, перевіряти сумісність комплектуючих "
-        "і пропонувати товари тільки з наведеного контексту. Будь лаконічним.\n"
+        # "Ти професійний консультант магазину ElectroStore. "
+        # "Твоя задача — допомагати у виборі техніки, перевіряти сумісність комплектуючих "
+        # "і пропонувати товари тільки з наведеного контексту. Будь лаконічним.\n"
+        # f"{context_str}"
+        "You are a professional consultant for the ElectroStore electronics shop. "
+        "Your task is to help customers choose hardware, check component compatibility, and answer tech questions. "
+        "Prioritize recommending products from the provided store context when available, "
+        "but you may also use Google Search to find general technical specs, reviews, or info about external products. "
+        "Be concise, always reply in the same language as the user's message, and display all prices in US dollars ($ / USD).\n"
         f"{context_str}"
     )
+
+    
+
+    # system_instruction = (
+    #     "You are a professional consultant for the ElectroStore electronics shop. "
+    #     "Your task is to help customers choose hardware, check component compatibility, "
+    #     "and recommend products only from the provided context. Be concise. "
+    #     "Always reply in the same language as the user's message, and display all prices exclusively in US dollars ($ / USD).\n"
+    #     f"{context_str}"
+    # )
 
     headers = {
         "Content-Type": "application/json",
@@ -55,7 +71,13 @@ async def chat_stream(
             *history,
             {"role": "user", "parts": [{"text": payload.message}]},
         ],
+        # "tools": [
+        #     {"google_search": {}}
+        # ],
     }
+    
+    if settings.ENABLE_GOOGLE_SEARCH:
+        request_body["tools"] = [{"google_search": {}}]
 
     async def event_generator():
         full_response_text = ""

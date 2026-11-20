@@ -29,17 +29,33 @@ class RAGService:
         return list(result.scalars().all())
 
     def format_context(self, products: list[ProductVector]) -> str:
-        """Форматує товари у текстовий контекст для Gemini."""
+        """Formats products into a text context for Gemini."""
         if not products:
-            return "Актуальних товарів на складі за цим запитом не знайдено."
+            return "No relevant in-stock products found for this query."
 
-        context = "Знайдені товари в магазині:\n"
+        context = "Available products in the store:\n"
         for p in products:
             specs = ", ".join(
                 f"{k}: {v}" for k, v in (p.specifications or {}).items()
             )
             context += (
-                f"- {p.title} | Ціна: {p.price} грн | "
-                f"В наявності: {p.stock} шт. | Характеристики: {specs}\n"
+                f"- {p.title} | Price: ${p.price} | "
+                f"In stock: {p.stock} pcs | Specifications: {specs}\n"
             )
         return context
+
+    # def format_context(self, products: list[ProductVector]) -> str:
+    #     """Форматує товари у текстовий контекст для Gemini."""
+    #     if not products:
+    #         return "Актуальних товарів на складі за цим запитом не знайдено."
+
+    #     context = "Знайдені товари в магазині:\n"
+    #     for p in products:
+    #         specs = ", ".join(
+    #             f"{k}: {v}" for k, v in (p.specifications or {}).items()
+    #         )
+    #         context += (
+    #             f"- {p.title} | Ціна: {p.price} грн | "
+    #             f"В наявності: {p.stock} шт. | Характеристики: {specs}\n"
+    #         )
+    #     return context

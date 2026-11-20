@@ -164,3 +164,12 @@ services:
       resources:
         limits:
           memory: 128M
+
+  frontend:
+    build:
+      context: ../ElectroStore_FrontEnd
+      dockerfile: Dockerfile
+    container_name: electrostore_frontend
+    restart: unless-stopped
+    networks:
+      - electro_net
