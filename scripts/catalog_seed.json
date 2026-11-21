@@ -1,0 +1,842 @@
+{
+  "categories": [
+    { "name": "Processors", "slug": "processors" },
+    { "name": "Graphics Cards", "slug": "graphics-cards" },
+    { "name": "Motherboards", "slug": "motherboards" },
+    { "name": "Memory (RAM)", "slug": "memory-ram" },
+    { "name": "NVMe & SATA SSDs", "slug": "ssds" },
+    { "name": "Hard Drives (HDD)", "slug": "hdds" },
+    { "name": "Power Supplies", "slug": "power-supplies" },
+    { "name": "PC Cases", "slug": "pc-cases" },
+    { "name": "CPU Air Coolers", "slug": "cpu-air-coolers" },
+    { "name": "Liquid Coolers (AIO)", "slug": "liquid-coolers" },
+    { "name": "Monitors", "slug": "monitors" },
+    { "name": "Laptops", "slug": "laptops" },
+    { "name": "Desktop PCs & Mini PCs", "slug": "desktop-pcs" },
+    { "name": "Smartphones", "slug": "smartphones" },
+    { "name": "Tablets & E-Readers", "slug": "tablets" },
+    { "name": "Keyboards", "slug": "keyboards" },
+    { "name": "Computer Mice", "slug": "mice" },
+    { "name": "Headphones & Headsets", "slug": "headphones" },
+    { "name": "Networking & Routers", "slug": "networking" },
+    { "name": "UPS & Power Banks", "slug": "power-banks-ups" }
+  ],
+  "products": [
+    {
+      "category_slug": "processors",
+      "title": "AMD Ryzen 9 9950X",
+      "price": 649.0,
+      "stock": 12,
+      "description": "16-core, 32-thread Zen 5 desktop processor for AM5 platform.",
+      "specifications": { "socket": "AM5", "cores": 16, "threads": 32, "tdp": "170W" }
+    },
+    {
+      "category_slug": "processors",
+      "title": "AMD Ryzen 9 9900X",
+      "price": 449.0,
+      "stock": 15,
+      "description": "12-core, 24-thread high-clock processor for gaming and content creation.",
+      "specifications": { "socket": "AM5", "cores": 12, "threads": 24, "tdp": "120W" }
+    },
+    {
+      "category_slug": "processors",
+      "title": "AMD Ryzen 7 9800X3D",
+      "price": 479.0,
+      "stock": 20,
+      "description": "8-core processor with 2nd-gen 3D V-Cache for ultra-low gaming latency.",
+      "specifications": { "socket": "AM5", "cores": 8, "threads": 16, "tdp": "120W" }
+    },
+    {
+      "category_slug": "processors",
+      "title": "AMD Ryzen 5 9600X",
+      "price": 279.0,
+      "stock": 25,
+      "description": "6-core, 12-thread efficiency-focused AM5 processor with DDR5 support.",
+      "specifications": { "socket": "AM5", "cores": 6, "threads": 12, "tdp": "65W" }
+    },
+    {
+      "category_slug": "processors",
+      "title": "Intel Core Ultra 9 285K",
+      "price": 589.0,
+      "stock": 10,
+      "description": "24-core flagship processor for LGA1851 with integrated NPU.",
+      "specifications": { "socket": "LGA1851", "cores": 24, "threads": 24, "tdp": "125W" }
+    },
+    {
+      "category_slug": "processors",
+      "title": "Intel Core Ultra 7 265K",
+      "price": 399.0,
+      "stock": 18,
+      "description": "20-core unlocked desktop CPU for productivity and modern gaming.",
+      "specifications": { "socket": "LGA1851", "cores": 20, "threads": 20, "tdp": "125W" }
+    },
+    {
+      "category_slug": "graphics-cards",
+      "title": "NVIDIA GeForce RTX 4080 Super 16GB",
+      "price": 999.0,
+      "stock": 8,
+      "description": "16GB GDDR6X graphics card for 4K ray tracing and AI workloads.",
+      "specifications": { "vram": "16GB GDDR6X", "bus": "256-bit", "tdp": "320W" }
+    },
+    {
+      "category_slug": "graphics-cards",
+      "title": "NVIDIA GeForce RTX 4070 Ti Super 16GB",
+      "price": 799.0,
+      "stock": 11,
+      "description": "16GB GDDR6X GPU with DLSS 3 and AV1 hardware encoding.",
+      "specifications": { "vram": "16GB GDDR6X", "bus": "256-bit", "tdp": "285W" }
+    },
+    {
+      "category_slug": "graphics-cards",
+      "title": "NVIDIA GeForce RTX 4070 Super 12GB",
+      "price": 599.0,
+      "stock": 16,
+      "description": "12GB GDDR6X graphics card delivering high-FPS 1440p performance.",
+      "specifications": { "vram": "12GB GDDR6X", "bus": "192-bit", "tdp": "220W" }
+    },
+    {
+      "category_slug": "graphics-cards",
+      "title": "NVIDIA GeForce RTX 4060 Ti 8GB",
+      "price": 399.0,
+      "stock": 22,
+      "description": "8GB GDDR6 graphics card for smooth 1080p and entry 1440p gaming.",
+      "specifications": { "vram": "8GB GDDR6", "bus": "128-bit", "tdp": "160W" }
+    },
+    {
+      "category_slug": "graphics-cards",
+      "title": "AMD Radeon RX 7900 XT 20GB",
+      "price": 699.0,
+      "stock": 9,
+      "description": "20GB GDDR6 graphics card with large memory buffer for 1440p/4K.",
+      "specifications": { "vram": "20GB GDDR6", "bus": "320-bit", "tdp": "315W" }
+    },
+    {
+      "category_slug": "graphics-cards",
+      "title": "AMD Radeon RX 7800 XT 16GB",
+      "price": 489.0,
+      "stock": 14,
+      "description": "16GB GDDR6 graphics card designed for high-refresh 1440p gaming.",
+      "specifications": { "vram": "16GB GDDR6", "bus": "256-bit", "tdp": "263W" }
+    },
+    {
+      "category_slug": "motherboards",
+      "title": "ASUS ROG Strix X870E-E Gaming WiFi",
+      "price": 499.0,
+      "stock": 7,
+      "description": "Flagship AM5 ATX motherboard with Wi-Fi 7, USB4, and PCIe 5.0.",
+      "specifications": { "socket": "AM5", "chipset": "X870E", "form_factor": "ATX", "wifi": "Wi-Fi 7" }
+    },
+    {
+      "category_slug": "motherboards",
+      "title": "ASUS TUF Gaming B650-Plus WiFi",
+      "price": 219.0,
+      "stock": 19,
+      "description": "Durable AM5 ATX motherboard with DDR5 support and Wi-Fi 6E.",
+      "specifications": { "socket": "AM5", "chipset": "B650", "form_factor": "ATX", "wifi": "Wi-Fi 6E" }
+    },
+    {
+      "category_slug": "motherboards",
+      "title": "MSI MAG B650 Tomahawk WiFi",
+      "price": 209.0,
+      "stock": 17,
+      "description": "ATX motherboard with strong VRM cooling, 2.5G LAN, and 3x M.2 slots.",
+      "specifications": { "socket": "AM5", "chipset": "B650", "form_factor": "ATX", "lan": "2.5GbE" }
+    },
+    {
+      "category_slug": "motherboards",
+      "title": "MSI MAG Z790 Tomahawk WiFi",
+      "price": 259.0,
+      "stock": 12,
+      "description": "Z790 DDR5 ATX motherboard with four M.2 slots and 2.5GbE Ethernet.",
+      "specifications": { "socket": "LGA1700", "chipset": "Z790", "form_factor": "ATX", "lan": "2.5GbE" }
+    },
+    {
+      "category_slug": "motherboards",
+      "title": "Gigabyte Z890 AORUS Elite WiFi7",
+      "price": 289.0,
+      "stock": 10,
+      "description": "LGA1851 ATX motherboard with DDR5 support and Wi-Fi 7 connectivity.",
+      "specifications": { "socket": "LGA1851", "chipset": "Z890", "form_factor": "ATX", "wifi": "Wi-Fi 7" }
+    },
+    {
+      "category_slug": "memory-ram",
+      "title": "Kingston Fury Beast 32GB DDR5 6000MHz",
+      "price": 119.0,
+      "stock": 30,
+      "description": "32GB (2x16GB) DDR5-6000 CL30 kit with AMD EXPO and Intel XMP 3.0.",
+      "specifications": { "capacity": "32GB (2x16GB)", "type": "DDR5", "speed": "6000MHz", "cl": "CL30" }
+    },
+    {
+      "category_slug": "memory-ram",
+      "title": "G.Skill Trident Z5 Neo 64GB DDR5 6000MHz",
+      "price": 229.0,
+      "stock": 14,
+      "description": "64GB (2x32GB) low-latency DDR5 kit tuned for AMD EXPO platforms.",
+      "specifications": { "capacity": "64GB (2x32GB)", "type": "DDR5", "speed": "6000MHz", "cl": "CL30" }
+    },
+    {
+      "category_slug": "memory-ram",
+      "title": "Corsair Vengeance 32GB DDR5 6400MHz",
+      "price": 129.0,
+      "stock": 20,
+      "description": "32GB (2x16GB) high-frequency DDR5 memory module for desktop PCs.",
+      "specifications": { "capacity": "32GB (2x16GB)", "type": "DDR5", "speed": "6400MHz", "cl": "CL32" }
+    },
+    {
+      "category_slug": "memory-ram",
+      "title": "Kingston Fury Renegade 32GB DDR4 3600MHz",
+      "price": 79.0,
+      "stock": 28,
+      "description": "32GB (2x16GB) DDR4-3600 CL16 kit for DDR4 gaming systems.",
+      "specifications": { "capacity": "32GB (2x16GB)", "type": "DDR4", "speed": "3600MHz", "cl": "CL16" }
+    },
+    {
+      "category_slug": "memory-ram",
+      "title": "Crucial Pro 64GB DDR5 5600MHz",
+      "price": 179.0,
+      "stock": 16,
+      "description": "64GB (2x32GB) reliable DDR5 kit for workstations and heavy multitasking.",
+      "specifications": { "capacity": "64GB (2x32GB)", "type": "DDR5", "speed": "5600MHz", "cl": "CL46" }
+    },
+    {
+      "category_slug": "ssds",
+      "title": "Samsung 990 PRO 2TB NVMe SSD",
+      "price": 169.0,
+      "stock": 25,
+      "description": "PCIe 4.0 x4 NVMe M.2 SSD with up to 7,450 MB/s sequential read.",
+      "specifications": { "capacity": "2TB", "interface": "PCIe 4.0 x4 NVMe", "form_factor": "M.2 2280", "read_mb_s": 7450 }
+    },
+    {
+      "category_slug": "ssds",
+      "title": "Samsung 990 PRO 1TB NVMe SSD",
+      "price": 109.0,
+      "stock": 32,
+      "description": "1TB PCIe 4.0 x4 NVMe M.2 SSD for OS, apps, and game libraries.",
+      "specifications": { "capacity": "1TB", "interface": "PCIe 4.0 x4 NVMe", "form_factor": "M.2 2280", "read_mb_s": 7450 }
+    },
+    {
+      "category_slug": "ssds",
+      "title": "WD Black SN850X 2TB NVMe SSD",
+      "price": 159.0,
+      "stock": 20,
+      "description": "2TB PCIe Gen4 NVMe SSD engineered for low-latency gaming loads.",
+      "specifications": { "capacity": "2TB", "interface": "PCIe 4.0 x4 NVMe", "form_factor": "M.2 2280", "read_mb_s": 7300 }
+    },
+    {
+      "category_slug": "ssds",
+      "title": "Crucial T500 2TB PCIe Gen4 NVMe SSD",
+      "price": 149.0,
+      "stock": 18,
+      "description": "High-efficiency 2TB M.2 NVMe SSD with DRAM cache.",
+      "specifications": { "capacity": "2TB", "interface": "PCIe 4.0 x4 NVMe", "form_factor": "M.2 2280", "read_mb_s": 7400 }
+    },
+    {
+      "category_slug": "ssds",
+      "title": "Samsung 870 EVO 2TB 2.5-inch SATA SSD",
+      "price": 139.0,
+      "stock": 21,
+      "description": "2TB 2.5-inch SATA III SSD for laptops and secondary storage.",
+      "specifications": { "capacity": "2TB", "interface": "SATA 6Gb/s", "form_factor": "2.5-inch", "read_mb_s": 560 }
+    },
+    {
+      "category_slug": "hdds",
+      "title": "Seagate IronWolf 4TB NAS HDD",
+      "price": 109.0,
+      "stock": 19,
+      "description": "4TB 3.5-inch CMR hard drive built for 24/7 NAS and storage arrays.",
+      "specifications": { "capacity": "4TB", "rpm": 5400, "form_factor": "3.5-inch", "recording": "CMR" }
+    },
+    {
+      "category_slug": "hdds",
+      "title": "Seagate IronWolf Pro 8TB NAS HDD",
+      "price": 199.0,
+      "stock": 11,
+      "description": "8TB 7200 RPM enterprise/NAS hard drive with workload rating up to 300TB/yr.",
+      "specifications": { "capacity": "8TB", "rpm": 7200, "form_factor": "3.5-inch", "recording": "CMR" }
+    },
+    {
+      "category_slug": "hdds",
+      "title": "Western Digital WD Red Plus 4TB HDD",
+      "price": 99.0,
+      "stock": 17,
+      "description": "4TB 3.5-inch CMR drive for home servers and network storage.",
+      "specifications": { "capacity": "4TB", "rpm": 5400, "form_factor": "3.5-inch", "recording": "CMR" }
+    },
+    {
+      "category_slug": "hdds",
+      "title": "Western Digital WD Black 6TB Desktop HDD",
+      "price": 169.0,
+      "stock": 12,
+      "description": "6TB 7200 RPM high-capacity 3.5-inch internal hard drive.",
+      "specifications": { "capacity": "6TB", "rpm": 7200, "form_factor": "3.5-inch", "recording": "CMR" }
+    },
+    {
+      "category_slug": "hdds",
+      "title": "Seagate Expansion 2TB Portable HDD",
+      "price": 74.0,
+      "stock": 26,
+      "description": "2TB USB 3.0 portable external hard drive for backups and media.",
+      "specifications": { "capacity": "2TB", "interface": "USB 3.0", "form_factor": "2.5-inch", "portable": true }
+    },
+    {
+      "category_slug": "power-supplies",
+      "title": "Corsair RM850e 850W ATX 3.1 PSU",
+      "price": 129.0,
+      "stock": 20,
+      "description": "850W fully modular ATX 3.1 power supply with 80 PLUS Gold certification.",
+      "specifications": { "wattage": 850, "efficiency": "80 PLUS Gold", "standard": "ATX 3.1", "modular": true }
+    },
+    {
+      "category_slug": "power-supplies",
+      "title": "Corsair RM1000x 1000W ATX 3.1 PSU",
+      "price": 179.0,
+      "stock": 12,
+      "description": "1000W low-noise modular PSU with native 12V-2x6 GPU support.",
+      "specifications": { "wattage": 1000, "efficiency": "80 PLUS Gold", "standard": "ATX 3.1", "modular": true }
+    },
+    {
+      "category_slug": "power-supplies",
+      "title": "be quiet! Pure Power 12 M 750W",
+      "price": 114.0,
+      "stock": 18,
+      "description": "750W ATX 3.1 modular power supply with quiet 120mm fan.",
+      "specifications": { "wattage": 750, "efficiency": "80 PLUS Gold", "standard": "ATX 3.1", "modular": true }
+    },
+    {
+      "category_slug": "power-supplies",
+      "title": "Seasonic Focus GX-850 850W",
+      "price": 149.0,
+      "stock": 14,
+      "description": "850W 80 PLUS Gold fully modular PSU with hybrid silent fan mode.",
+      "specifications": { "wattage": 850, "efficiency": "80 PLUS Gold", "standard": "ATX 3.0", "modular": true }
+    },
+    {
+      "category_slug": "power-supplies",
+      "title": "MSI MAG A850GL PCIE5 850W",
+      "price": 119.0,
+      "stock": 16,
+      "description": "850W compact modular ATX 3.0 / PCIe 5.0 ready power supply.",
+      "specifications": { "wattage": 850, "efficiency": "80 PLUS Gold", "standard": "ATX 3.0", "modular": true }
+    },
+    {
+      "category_slug": "pc-cases",
+      "title": "Fractal Design North Charcoal TG",
+      "price": 139.0,
+      "stock": 11,
+      "description": "Mid-tower ATX case with real walnut front slats and mesh airflow.",
+      "specifications": { "form_factor": "ATX / mATX / Mini-ITX", "side_panel": "Tempered Glass", "included_fans": 2 }
+    },
+    {
+      "category_slug": "pc-cases",
+      "title": "NZXT H6 Flow RGB Compact Dual-Chamber",
+      "price": 129.0,
+      "stock": 14,
+      "description": "Panoramic glass dual-chamber ATX case with angled intake fans.",
+      "specifications": { "form_factor": "ATX / mATX / Mini-ITX", "side_panel": "Tempered Glass", "included_fans": 3 }
+    },
+    {
+      "category_slug": "pc-cases",
+      "title": "Corsair 4000D Airflow Tempered Glass",
+      "price": 104.0,
+      "stock": 22,
+      "description": "High-airflow ATX mid-tower case with clean cable routing channels.",
+      "specifications": { "form_factor": "ATX / mATX / Mini-ITX", "side_panel": "Tempered Glass", "included_fans": 2 }
+    },
+    {
+      "category_slug": "pc-cases",
+      "title": "Lian Li O11 Vision Compact",
+      "price": 119.0,
+      "stock": 10,
+      "description": "Modern showcase PC case supporting back-connect motherboards.",
+      "specifications": { "form_factor": "ATX / mATX / Mini-ITX", "side_panel": "Tempered Glass", "included_fans": 0 }
+    },
+    {
+      "category_slug": "pc-cases",
+      "title": "be quiet! Shadow Base 800 DX",
+      "price": 159.0,
+      "stock": 9,
+      "description": "Spacious full-tower-class airflow chassis with ARGB lighting.",
+      "specifications": { "form_factor": "E-ATX / ATX / mATX / Mini-ITX", "side_panel": "Tempered Glass", "included_fans": 3 }
+    },
+    {
+      "category_slug": "cpu-air-coolers",
+      "title": "Thermalright Phantom Spirit 120 SE",
+      "price": 39.0,
+      "stock": 35,
+      "description": "Dual-tower, 7-heatpipe air cooler with high thermal dissipation.",
+      "specifications": { "type": "Dual Tower", "fans": "2x 120mm PWM", "height_mm": 154 }
+    },
+    {
+      "category_slug": "cpu-air-coolers",
+      "title": "Noctua NH-D15 G2",
+      "price": 149.0,
+      "stock": 12,
+      "description": "Flagship dual-tower CPU air cooler with next-gen 140mm fans.",
+      "specifications": { "type": "Dual Tower", "fans": "2x 140mm PWM", "height_mm": 168 }
+    },
+    {
+      "category_slug": "cpu-air-coolers",
+      "title": "DeepCool AK620 Zero Dark",
+      "price": 69.0,
+      "stock": 20,
+      "description": "All-black dual-tower air cooler with six copper heatpipes.",
+      "specifications": { "type": "Dual Tower", "fans": "2x 120mm PWM", "height_mm": 160 }
+    },
+    {
+      "category_slug": "cpu-air-coolers",
+      "title": "be quiet! Dark Rock Pro 5",
+      "price": 99.0,
+      "stock": 13,
+      "description": "Quiet dual-tower air cooler with dual speed mode switch.",
+      "specifications": { "type": "Dual Tower", "fans": "135mm + 120mm PWM", "height_mm": 168 }
+    },
+    {
+      "category_slug": "cpu-air-coolers",
+      "title": "ID-Cooling SE-224-XTS Black",
+      "price": 25.0,
+      "stock": 40,
+      "description": "Compact single-tower CPU cooler for mainstream processors.",
+      "specifications": { "type": "Single Tower", "fans": "1x 120mm PWM", "height_mm": 151 }
+    },
+    {
+      "category_slug": "liquid-coolers",
+      "title": "Arctic Liquid Freezer III 360",
+      "price": 115.0,
+      "stock": 18,
+      "description": "360mm AIO liquid cooler with dedicated VRM cooling fan.",
+      "specifications": { "radiator": "360mm", "fans": "3x 120mm PWM", "pump_pwm": true }
+    },
+    {
+      "category_slug": "liquid-coolers",
+      "title": "Arctic Liquid Freezer III 240",
+      "price": 95.0,
+      "stock": 21,
+      "description": "240mm AIO CPU cooler with thick 38mm radiator for strong cooling.",
+      "specifications": { "radiator": "240mm", "fans": "2x 120mm PWM", "pump_pwm": true }
+    },
+    {
+      "category_slug": "liquid-coolers",
+      "title": "Corsair iCUE Link H150i RGB 360mm",
+      "price": 199.0,
+      "stock": 9,
+      "description": "360mm liquid CPU cooler with single-cable iCUE Link ecosystem.",
+      "specifications": { "radiator": "360mm", "fans": "3x 120mm RGB", "pump_pwm": true }
+    },
+    {
+      "category_slug": "liquid-coolers",
+      "title": "NZXT Kraken 240 RGB",
+      "price": 159.0,
+      "stock": 11,
+      "description": "240mm AIO cooler with built-in circular LCD screen for telemetry.",
+      "specifications": { "radiator": "240mm", "fans": "2x 120mm RGB", "display": "1.54-inch LCD" }
+    },
+    {
+      "category_slug": "liquid-coolers",
+      "title": "EK-Nucleus AIO CR360 Lux D-RGB",
+      "price": 179.0,
+      "stock": 8,
+      "description": "360mm liquid cooler with rotatable pump cap and D-RGB lighting.",
+      "specifications": { "radiator": "360mm", "fans": "3x 120mm D-RGB", "pump_pwm": true }
+    },
+    {
+      "category_slug": "monitors",
+      "title": "LG UltraGear 27GS85Q 27-inch QHD",
+      "price": 329.0,
+      "stock": 14,
+      "description": "27-inch 2560x1440 Nano IPS monitor with 180Hz and 1ms GtG.",
+      "specifications": { "size_inch": 27, "resolution": "2560x1440", "panel": "Nano IPS", "refresh_hz": 180 }
+    },
+    {
+      "category_slug": "monitors",
+      "title": "ASUS ROG Swift OLED PG27AQDM 27-inch",
+      "price": 799.0,
+      "stock": 6,
+      "description": "27-inch QHD 240Hz OLED gaming monitor with HDR10 and low response time.",
+      "specifications": { "size_inch": 27, "resolution": "2560x1440", "panel": "OLED", "refresh_hz": 240 }
+    },
+    {
+      "category_slug": "monitors",
+      "title": "Dell UltraSharp U2724D 27-inch QHD",
+      "price": 389.0,
+      "stock": 15,
+      "description": "27-inch 120Hz IPS Black monitor tailored for coding and color work.",
+      "specifications": { "size_inch": 27, "resolution": "2560x1440", "panel": "IPS Black", "refresh_hz": 120 }
+    },
+    {
+      "category_slug": "monitors",
+      "title": "Gigabyte M27Q 27-inch QHD 170Hz",
+      "price": 259.0,
+      "stock": 17,
+      "description": "27-inch 1440p SS IPS monitor with KVM switch for multi-PC setups.",
+      "specifications": { "size_inch": 27, "resolution": "2560x1440", "panel": "SS IPS", "refresh_hz": 170 }
+    },
+    {
+      "category_slug": "monitors",
+      "title": "Samsung Odyssey G5 34-inch UWQHD",
+      "price": 369.0,
+      "stock": 10,
+      "description": "34-inch curved 21:9 ultrawide monitor with 165Hz refresh rate.",
+      "specifications": { "size_inch": 34, "resolution": "3440x1440", "panel": "VA Curved", "refresh_hz": 165 }
+    },
+    {
+      "category_slug": "laptops",
+      "title": "Lenovo Legion Pro 5 16-inch Gaming Laptop",
+      "price": 1499.0,
+      "stock": 7,
+      "description": "16-inch WQXGA 165Hz laptop with 32GB DDR5, 1TB SSD, and RTX 4070.",
+      "specifications": { "display": "16-inch WQXGA 165Hz", "ram": "32GB DDR5", "storage": "1TB NVMe", "gpu": "RTX 4070 Laptop" }
+    },
+    {
+      "category_slug": "laptops",
+      "title": "ASUS ROG Zephyrus G14 14-inch OLED",
+      "price": 1599.0,
+      "stock": 6,
+      "description": "Lightweight 14-inch 3K 120Hz OLED laptop for mobile creators and gamers.",
+      "specifications": { "display": "14-inch 3K OLED 120Hz", "ram": "32GB LPDDR5X", "storage": "1TB NVMe", "gpu": "RTX 4060 Laptop" }
+    },
+    {
+      "category_slug": "laptops",
+      "title": "Apple MacBook Air 15-inch M3",
+      "price": 1299.0,
+      "stock": 12,
+      "description": "Fanless 15.3-inch Liquid Retina laptop with long battery life and M3 chip.",
+      "specifications": { "display": "15.3-inch Liquid Retina", "ram": "16GB Unified", "storage": "512GB SSD", "chip": "Apple M3" }
+    },
+    {
+      "category_slug": "laptops",
+      "title": "Dell XPS 13 Plus 13.4-inch",
+      "price": 1349.0,
+      "stock": 8,
+      "description": "Compact ultrabook with edge-to-edge keyboard and high-res display.",
+      "specifications": { "display": "13.4-inch FHD+", "ram": "16GB LPDDR5", "storage": "512GB NVMe", "gpu": "Integrated" }
+    },
+    {
+      "category_slug": "laptops",
+      "title": "Acer Nitro 5 15.6-inch FHD 144Hz",
+      "price": 899.0,
+      "stock": 14,
+      "description": "Everyday gaming and development laptop with 144Hz display and RTX 4060.",
+      "specifications": { "display": "15.6-inch FHD 144Hz", "ram": "16GB DDR5", "storage": "512GB NVMe", "gpu": "RTX 4060 Laptop" }
+    },
+    {
+      "category_slug": "desktop-pcs",
+      "title": "Apple Mac mini M4 16GB 512GB",
+      "price": 799.0,
+      "stock": 15,
+      "description": "Compact desktop computer with Apple M4 chip, Thunderbolt ports, and quiet cooling.",
+      "specifications": { "chip": "Apple M4", "ram": "16GB Unified", "storage": "512GB SSD", "form_factor": "Mini PC" }
+    },
+    {
+      "category_slug": "desktop-pcs",
+      "title": "Minisforum UM790 Pro Mini PC",
+      "price": 629.0,
+      "stock": 11,
+      "description": "High-performance Ryzen 9 mini PC with dual USB4 and DDR5 support.",
+      "specifications": { "cpu": "Ryzen 9 7940HS", "ram": "32GB DDR5", "storage": "1TB NVMe", "form_factor": "Mini PC" }
+    },
+    {
+      "category_slug": "desktop-pcs",
+      "title": "ASUS NUC 14 Pro Slim",
+      "price": 549.0,
+      "stock": 13,
+      "description": "Slim business and developer mini desktop with Wi-Fi 6E and rich I/O.",
+      "specifications": { "cpu": "Core Ultra 5", "ram": "16GB DDR5", "storage": "512GB NVMe", "form_factor": "Mini PC" }
+    },
+    {
+      "category_slug": "desktop-pcs",
+      "title": "Corsair Vengeance i7500 Gaming Desktop",
+      "price": 2199.0,
+      "stock": 4,
+      "description": "Pre-built tower desktop PC with liquid cooling and high-end GPU.",
+      "specifications": { "ram": "32GB DDR5", "storage": "2TB NVMe", "gpu": "RTX 4080 Super", "form_factor": "Mid Tower" }
+    },
+    {
+      "category_slug": "desktop-pcs",
+      "title": "Lenovo ThinkCentre M75q Gen 5 Tiny",
+      "price": 599.0,
+      "stock": 10,
+      "description": "Ultra-small office and lab desktop with VESA mount support.",
+      "specifications": { "cpu": "Ryzen 5 PRO", "ram": "16GB DDR5", "storage": "512GB NVMe", "form_factor": "Tiny 1L" }
+    },
+    {
+      "category_slug": "smartphones",
+      "title": "Apple iPhone 16 Pro 256GB",
+      "price": 1099.0,
+      "stock": 15,
+      "description": "6.3-inch Super Retina XDR ProMotion smartphone with A18 Pro chip and USB-C.",
+      "specifications": { "display": "6.3-inch OLED 120Hz", "storage": "256GB", "chip": "A18 Pro", "os": "iOS" }
+    },
+    {
+      "category_slug": "smartphones",
+      "title": "Samsung Galaxy S24 Ultra 256GB",
+      "price": 1199.0,
+      "stock": 12,
+      "description": "6.8-inch Dynamic AMOLED 2X smartphone with integrated S Pen and titanium frame.",
+      "specifications": { "display": "6.8-inch QHD+ 120Hz", "storage": "256GB", "ram": "12GB", "os": "Android" }
+    },
+    {
+      "category_slug": "smartphones",
+      "title": "Google Pixel 9 Pro 256GB",
+      "price": 999.0,
+      "stock": 14,
+      "description": "6.3-inch Super Actua display smartphone with Tensor G4 and triple camera system.",
+      "specifications": { "display": "6.3-inch OLED 120Hz", "storage": "256GB", "ram": "16GB", "os": "Android" }
+    },
+    {
+      "category_slug": "smartphones",
+      "title": "OnePlus 12 256GB",
+      "price": 799.0,
+      "stock": 16,
+      "description": "Fast-charging flagship smartphone with 120Hz LTPO display and Snapdragon Gen 3.",
+      "specifications": { "display": "6.82-inch QHD+ 120Hz", "storage": "256GB", "ram": "16GB", "os": "Android" }
+    },
+    {
+      "category_slug": "smartphones",
+      "title": "Nothing Phone (2a) 256GB",
+      "price": 379.0,
+      "stock": 22,
+      "description": "Mid-range smartphone with Glyph interface, 120Hz AMOLED screen, and clean UI.",
+      "specifications": { "display": "6.7-inch AMOLED 120Hz", "storage": "256GB", "ram": "12GB", "os": "Android" }
+    },
+    {
+      "category_slug": "tablets",
+      "title": "Apple iPad Air 11-inch M2 128GB",
+      "price": 599.0,
+      "stock": 14,
+      "description": "11-inch Liquid Retina tablet powered by M2 chip with Apple Pencil Pro support.",
+      "specifications": { "display": "11-inch Liquid Retina", "storage": "128GB", "chip": "Apple M2", "connectivity": "Wi-Fi 6E" }
+    },
+    {
+      "category_slug": "tablets",
+      "title": "Apple iPad Pro 13-inch M4 256GB",
+      "price": 1299.0,
+      "stock": 7,
+      "description": "Ultra-thin 13-inch Tandem OLED tablet for design, notes, and media.",
+      "specifications": { "display": "13-inch Tandem OLED", "storage": "256GB", "chip": "Apple M4", "refresh_hz": 120 }
+    },
+    {
+      "category_slug": "tablets",
+      "title": "Samsung Galaxy Tab S9 128GB",
+      "price": 749.0,
+      "stock": 10,
+      "description": "11-inch Dynamic AMOLED 2X tablet with S Pen included in the box.",
+      "specifications": { "display": "11-inch AMOLED 120Hz", "storage": "128GB", "ram": "8GB", "stylus_included": true }
+    },
+    {
+      "category_slug": "tablets",
+      "title": "Amazon Kindle Paperwhite 16GB",
+      "price": 159.0,
+      "stock": 25,
+      "description": "6.8-inch glare-free e-reader with warm light adjustment and weeks of battery.",
+      "specifications": { "display": "6.8-inch E-Ink", "storage": "16GB", "waterproof": "IPX8", "backlight": true }
+    },
+    {
+      "category_slug": "tablets",
+      "title": "Lenovo Tab P12 128GB",
+      "price": 299.0,
+      "stock": 16,
+      "description": "12.7-inch 3K LCD tablet suited for reading PDFs, study, and streaming.",
+      "specifications": { "display": "12.7-inch 3K LCD", "storage": "128GB", "ram": "8GB", "speakers": "Quad JBL" }
+    },
+    {
+      "category_slug": "keyboards",
+      "title": "Keychron Q1 Pro Wireless Mechanical Keyboard",
+      "price": 189.0,
+      "stock": 18,
+      "description": "75% CNC aluminum gasket-mount wireless keyboard with hot-swappable sockets.",
+      "specifications": { "layout": "75%", "connection": "Bluetooth 5.1 / USB-C", "mount": "Gasket", "hot_swap": true }
+    },
+    {
+      "category_slug": "keyboards",
+      "title": "Keychron K2 Pro QMK/VIA Mechanical Keyboard",
+      "price": 109.0,
+      "stock": 24,
+      "description": "Compact 75% wireless mechanical keyboard with QMK/VIA key remapping.",
+      "specifications": { "layout": "75%", "connection": "Bluetooth 5.1 / USB-C", "mount": "Tray", "hot_swap": true }
+    },
+    {
+      "category_slug": "keyboards",
+      "title": "Logitech MX Mechanical Wireless",
+      "price": 169.0,
+      "stock": 15,
+      "description": "Low-profile tactile wireless keyboard with multi-device Easy-Switch.",
+      "specifications": { "layout": "Full-size", "connection": "Bluetooth / Logi Bolt", "switches": "Tactile Quiet", "backlight": true }
+    },
+    {
+      "category_slug": "keyboards",
+      "title": "Wooting 60HE+ Analog Mechanical Keyboard",
+      "price": 179.0,
+      "stock": 9,
+      "description": "60% rapid-trigger Hall-effect keyboard with adjustable actuation points.",
+      "specifications": { "layout": "60%", "connection": "USB-C Wired", "switches": "Lekker Hall Effect", "rapid_trigger": true }
+    },
+    {
+      "category_slug": "keyboards",
+      "title": "Aula F75 Wireless Mechanical Keyboard",
+      "price": 79.0,
+      "stock": 27,
+      "description": "75% gasket-mounted mechanical keyboard with rotary knob and tri-mode wireless.",
+      "specifications": { "layout": "75%", "connection": "2.4GHz / BT / USB-C", "mount": "Gasket", "hot_swap": true }
+    },
+    {
+      "category_slug": "mice",
+      "title": "Logitech MX Master 3S Wireless Mouse",
+      "price": 99.0,
+      "stock": 26,
+      "description": "Ergonomic wireless mouse with 8,000 DPI sensor and MagSpeed electromagnetic scroll.",
+      "specifications": { "dpi": 8000, "connection": "Bluetooth / Logi Bolt", "weight_g": 141, "ergonomic": true }
+    },
+    {
+      "category_slug": "mice",
+      "title": "Logitech G Pro X Superlight 2",
+      "price": 159.0,
+      "stock": 16,
+      "description": "Ultra-lightweight wireless gaming mouse with HERO 2 sensor up to 32,000 DPI.",
+      "specifications": { "dpi": 32000, "connection": "2.4GHz Lightspeed / USB-C", "weight_g": 60, "polling_hz": 2000 }
+    },
+    {
+      "category_slug": "mice",
+      "title": "Razer DeathAdder V3 Pro Wireless",
+      "price": 149.0,
+      "stock": 14,
+      "description": "Ergonomic lightweight wireless esports mouse with optical switches.",
+      "specifications": { "dpi": 30000, "connection": "2.4GHz HyperSpeed / USB-C", "weight_g": 63, "ergonomic": true }
+    },
+    {
+      "category_slug": "mice",
+      "title": "Keychron M3 Wireless Mouse",
+      "price": 69.0,
+      "stock": 21,
+      "description": "Lightweight wireless mouse with PAW3395 sensor and multi-device support.",
+      "specifications": { "dpi": 26000, "connection": "2.4GHz / BT / USB-C", "weight_g": 79, "ergonomic": true }
+    },
+    {
+      "category_slug": "mice",
+      "title": "Logitech Lift Vertical Ergonomic Mouse",
+      "price": 69.0,
+      "stock": 19,
+      "description": "57-degree vertical wireless mouse designed to reduce wrist strain.",
+      "specifications": { "dpi": 4000, "connection": "Bluetooth / Logi Bolt", "weight_g": 125, "ergonomic": true }
+    },
+    {
+      "category_slug": "headphones",
+      "title": "Sony WH-1000XM5 Wireless Headphones",
+      "price": 349.0,
+      "stock": 15,
+      "description": "Over-ear wireless noise-canceling headphones with up to 30 hours battery life.",
+      "specifications": { "type": "Over-Ear", "anc": true, "battery_hours": 30, "connection": "Bluetooth 5.2" }
+    },
+    {
+      "category_slug": "headphones",
+      "title": "Bose QuietComfort Headphones",
+      "price": 329.0,
+      "stock": 12,
+      "description": "Comfortable wireless ANC headphones with adjustable sound and clear call mic.",
+      "specifications": { "type": "Over-Ear", "anc": true, "battery_hours": 24, "connection": "Bluetooth 5.1" }
+    },
+    {
+      "category_slug": "headphones",
+      "title": "Apple AirPods Pro 2 USB-C",
+      "price": 249.0,
+      "stock": 22,
+      "description": "Active noise-canceling wireless earbuds with Adaptive Audio and USB-C MagSafe case.",
+      "specifications": { "type": "In-Ear TWS", "anc": true, "battery_hours": 30, "connector": "USB-C" }
+    },
+    {
+      "category_slug": "headphones",
+      "title": "HyperX Cloud III Wireless Gaming Headset",
+      "price": 149.0,
+      "stock": 17,
+      "description": "Wireless gaming headset with 53mm angled drivers and detachable mic.",
+      "specifications": { "type": "Over-Ear Gaming", "anc": false, "battery_hours": 120, "connection": "2.4GHz Wireless" }
+    },
+    {
+      "category_slug": "headphones",
+      "title": "Beyerdynamic DT 770 PRO 80 Ohm",
+      "price": 159.0,
+      "stock": 13,
+      "description": "Closed-back studio reference headphones known for detail and durability.",
+      "specifications": { "type": "Over-Ear Studio", "impedance_ohm": 80, "anc": false, "connection": "3.5mm / 6.35mm Wired" }
+    },
+    {
+      "category_slug": "networking",
+      "title": "ASUS RT-AX86U Pro Wi-Fi 6 Router",
+      "price": 249.0,
+      "stock": 12,
+      "description": "Dual-band Wi-Fi 6 gaming and home router with 2.5G port and AiMesh support.",
+      "specifications": { "standard": "Wi-Fi 6 (802.11ax)", "max_speed": "AX5700", "wan_lan_2_5g": true }
+    },
+    {
+      "category_slug": "networking",
+      "title": "TP-Link Deco XE75 Pro Wi-Fi 6E Mesh (2-Pack)",
+      "price": 299.0,
+      "stock": 9,
+      "description": "Tri-band Wi-Fi 6E mesh system with 6GHz backhaul for wide coverage.",
+      "specifications": { "standard": "Wi-Fi 6E", "nodes": 2, "wan_lan_2_5g": true }
+    },
+    {
+      "category_slug": "networking",
+      "title": "Ubiquiti UniFi Express Compact Gateway",
+      "price": 149.0,
+      "stock": 11,
+      "description": "Compact Wi-Fi 6 cloud gateway and router for network management.",
+      "specifications": { "standard": "Wi-Fi 6", "management": "UniFi Network", "form_factor": "Desktop" }
+    },
+    {
+      "category_slug": "networking",
+      "title": "TP-Link TL-SG108E 8-Port Gigabit Switch",
+      "price": 29.0,
+      "stock": 30,
+      "description": "8-port unmanaged/easy-smart Gigabit Ethernet switch for home labs.",
+      "specifications": { "ports": "8x 1GbE", "rackmount": false, "metal_case": true }
+    },
+    {
+      "category_slug": "networking",
+      "title": "GL.iNet GL-MT3000 Beryl AX Travel Router",
+      "price": 89.0,
+      "stock": 18,
+      "description": "Pocket Wi-Fi 6 travel router with built-in WireGuard and OpenVPN support.",
+      "specifications": { "standard": "Wi-Fi 6", "vpn": "WireGuard / OpenVPN", "portable": true }
+    },
+    {
+      "category_slug": "power-banks-ups",
+      "title": "Anker Prime 27,650mAh 250W Power Bank",
+      "price": 179.0,
+      "stock": 16,
+      "description": "High-output 250W power bank capable of fast-charging laptops and phones.",
+      "specifications": { "capacity_mah": 27650, "max_output_w": 250, "ports": "2x USB-C, 1x USB-A" }
+    },
+    {
+      "category_slug": "power-banks-ups",
+      "title": "Ugreen Nexode 20,000mAh 130W Power Bank",
+      "price": 89.0,
+      "stock": 24,
+      "description": "20,000mAh portable battery with 100W USB-C PD output for laptops.",
+      "specifications": { "capacity_mah": 20000, "max_output_w": 130, "ports": "2x USB-C, 1x USB-A" }
+    },
+    {
+      "category_slug": "power-banks-ups",
+      "title": "APC Back-UPS BX950MI 950VA / 520W",
+      "price": 149.0,
+      "stock": 11,
+      "description": "Line-interactive UPS protecting PCs, routers, and monitors from outages.",
+      "specifications": { "capacity_va": 950, "active_power_w": 520, "topology": "Line-Interactive" }
+    },
+    {
+      "category_slug": "power-banks-ups",
+      "title": "CyberPower CP1500EPFCLCD 1500VA / 900W",
+      "price": 239.0,
+      "stock": 8,
+      "description": "Pure sine wave UPS with LCD status panel for workstations and NAS.",
+      "specifications": { "capacity_va": 1500, "active_power_w": 900, "waveform": "Pure Sine Wave" }
+    },
+    {
+      "category_slug": "power-banks-ups",
+      "title": "Anker Nano II 65W GaN USB-C Charger",
+      "price": 39.0,
+      "stock": 35,
+      "description": "Compact 65W GaN wall charger for laptops, tablets, and smartphones.",
+      "specifications": { "max_output_w": 65, "tech": "GaN II", "ports": "1x USB-C" }
+    }
+  ]
+}
