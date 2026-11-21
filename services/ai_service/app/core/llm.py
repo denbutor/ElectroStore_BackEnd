@@ -1,93 +1,66 @@
-import asyncio
-import google.generativeai as genai
+import httpx
 from app.core.config import settings
 
-genai.configure(api_key=settings.GEMINI_API_KEY)
+GEMINI_MODEL_TYPES: dict[str, str] = {
+    "lite": "gemini-3.5-flash-lite",
+    "flash": "gemini-3.8-flash",
+    "pro": "gemini-3.1-pro-preview",
+}
 
-GEMINI_CHAT_MODELS = [
+DEFAULT_MODEL_TYPE = "flash"
+
+GEMINI_CHAT_MODELS: list[str] = [
     "gemini-3.8-flash",
-    "gemini-flash-latest",
-    "gemini-3.5-flash-lite",    
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-pro-preview",
 ]
+
+EMBEDDING_MODEL = "gemini-embedding-001"
+EMBEDDING_DIMENSION = 768
+
+
+def resolve_chat_models(model_type: str | None = None) -> list[str]:
+    if not model_type:
+        return list(GEMINI_CHAT_MODELS)
+
+    normalized = model_type.strip().lower().removeprefix("models/")
+    primary = GEMINI_MODEL_TYPES.get(normalized, normalized)
+
+    ordered = [primary]
+    for fallback in GEMINI_CHAT_MODELS:
+        if fallback not in ordered:
+            ordered.append(fallback)
+    return ordered
 
 
 async def get_embedding(text: str) -> list[float]:
-    """Генерує вектор розмірності 768 через актуальну модель gemini-embedding-001."""
-    result = await asyncio.to_thread(
-        genai.embed_content,
-        model="models/gemini-embedding-001",
-        content=text,
-        output_dimensionality=768,
+    clean_text = (text or "").strip()
+    if not clean_text:
+        return [0.0] * EMBEDDING_DIMENSION
+
+    url = (
+        f"https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{EMBEDDING_MODEL}:embedContent"
     )
-    return result["embedding"]
+    headers = {
+        "Content-Type": "application/json",
+        "x-goog-api-key": settings.GEMINI_API_KEY,
+    }
+    payload = {
+        "model": f"models/{EMBEDDING_MODEL}",
+        "content": {
+            "parts": [{"text": clean_text}],
+        },
+        "outputDimensionality": EMBEDDING_DIMENSION,
+    }
 
-# import asyncio
-# import google.generativeai as genai
-# from app.core.config import settings
+    async with httpx.AsyncClient(timeout=20.0) as client:
+        response = await client.post(url, headers=headers, json=payload)
+        response.raise_for_status()
+        data = response.json()
 
-# genai.configure(api_key=settings.GEMINI_API_KEY)
+    values = data.get("embedding", {}).get("values")
+    if not values:
+        raise ValueError(f"Порожній embedding у відповіді Gemini API: {data}")
 
-# GEMINI_CHAT_MODELS = [
-#     "gemini-2.5-flash",
-#     "gemini-2.5-flash-lite",
-#     "gemini-flash-latest",
-# ]
-
-
-# async def get_embedding(text: str) -> list[float]:
-#     """Генерує вектор розмірності 768 через актуальну модель gemini-embedding-001."""
-#     result = await asyncio.to_thread(
-#         genai.embed_content,
-#         model="models/gemini-embedding-001",
-#         content=text,
-#         output_dimensionality=768,
-#     )
-#     return result["embedding"]
-
-# # import asyncio
-# # import google.generativeai as genai
-# # from app.core.config import settings
-
-# # genai.configure(api_key=settings.GEMINI_API_KEY)
-
-# # GEMINI_CHAT_MODELS = [
-# #     "gemini-2.5-flash",
-# #     "gemini-2.5-flash-lite",
-# #     "gemini-flash-latest",
-# # ]
-
-
-# # async def get_embedding(text: str) -> list[float]:
-# #     """Генерує вектор розмірності 768 через актуальну модель gemini-embedding-001."""
-# #     result = await asyncio.to_thread(
-# #         genai.embed_content,
-# #         model="models/gemini-embedding-001",
-# #         content=text,
-# #         output_dimensionality=768,
-# #     )
-# #     return result["embedding"]
-
-# # # import asyncio
-# # # import google.generativeai as genai
-# # # from app.core.config import settings
-
-# # # genai.configure(api_key=settings.GEMINI_API_KEY)
-
-# # # GEMINI_CHAT_MODELS = [
-# # #     "gemini-3.5-flash",
-# # #     "gemini-3.5-flash-lite",
-# # #     "gemini-3.6-flash",
-# # #     "gemini-3.8-flash",
-# # #     "gemini-flash-latest",
-# # # ]
-
-
-# # # async def get_embedding(text: str) -> list[float]:
-# # #     """Генерує вектор розмірності 768 через актуальну модель gemini-embedding-001."""
-# # #     result = await asyncio.to_thread(
-# # #         genai.embed_content,
-# # #         model="models/gemini-embedding-001",
-# # #         content=text,
-# # #         output_dimensionality=768,
-# # #     )
-# # #     return result["embedding"]
+    return values

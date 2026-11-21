@@ -11,7 +11,6 @@ async def lifespan(app: FastAPI):
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
-    # Коректне закриття з'єднань при вимкненні сервісу
     await engine.dispose()
 
 
@@ -23,7 +22,6 @@ app = FastAPI(
     openapi_url="/api/v1/auth/openapi.json",
 )
 
-# Підключення роутера
 app.include_router(auth_router, prefix="/api/v1")
 
 

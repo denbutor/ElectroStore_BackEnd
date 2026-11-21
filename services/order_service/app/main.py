@@ -8,7 +8,6 @@ from app.db.base import Base, engine
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Автоматичне створення таблиць замовлень
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
     yield
