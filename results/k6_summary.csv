@@ -1,0 +1,4 @@
+profile,total_reqs,ok_2xx_reqs,all_avg_ms,all_p95_ms,ok_avg_ms,ok_med_ms,ok_p95_ms,ok_max_ms
+load,10040,4016,3.98,8.0,7.5,4.72,11.39,1089.5
+smoke,390,156,4.22,11.51,7.02,5.65,14.65,39.25
+spike,18865,7546,10.32,42.88,23.27,7.22,95.43,681.66
