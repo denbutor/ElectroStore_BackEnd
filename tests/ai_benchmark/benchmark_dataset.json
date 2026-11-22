@@ -1,0 +1,271 @@
+[
+  {
+    "id": "A1",
+    "category": "catalog_lookup",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Які відеокарти NVIDIA є в наявності, які їхні ціни та скільки штук на складі?",
+    "ground_truth_facts": [
+      "Відповідь спирається на товари з контексту магазину ElectroStore",
+      "Ціни вказані в доларах ($ / USD)",
+      "Вказано актуальну наявність/кількість на складі з контексту"
+    ]
+  },
+  {
+    "id": "A2",
+    "category": "catalog_lookup",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Які процесори зараз доступні в магазині та чим вони відрізняються за ціною й характеристиками?",
+    "ground_truth_facts": [
+      "Перелічено процесори з контексту каталогу",
+      "Ціни наведено в $",
+      "Характеристики узгоджуються з контекстом RAG"
+    ]
+  },
+  {
+    "id": "A3",
+    "category": "catalog_lookup",
+    "language": "en",
+    "expected_ui_lang": "en",
+    "prompt": "Which graphics cards are currently in stock in your store and what are their prices?",
+    "ground_truth_facts": [
+      "Lists GPUs from the store context",
+      "Prices are shown in $ / USD",
+      "Stock status matches the retrieved context"
+    ]
+  },
+  {
+    "id": "A4",
+    "category": "catalog_lookup",
+    "language": "de",
+    "expected_ui_lang": "de",
+    "prompt": "Welche Prozessoren sind derzeit im Shop verfügbar und wie viel kosten sie?",
+    "ground_truth_facts": [
+      "Nennt Prozessoren aus dem Shop-Kontext",
+      "Preise werden in $ / USD angegeben",
+      "Verfügbarkeit stimmt mit dem Kontext überein"
+    ]
+  },
+  {
+    "id": "B1",
+    "category": "compatibility",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Чи підійде процесор AMD Ryzen 7 7800X3D до материнських плат із каталогу і який блок живлення порадите?",
+    "ground_truth_facts": [
+      "Перевірено сумісність сокета AM5 / платформи",
+      "Надано обґрунтовану рекомендацію щодо потужності БЖ",
+      "Враховано доступні позиції з контексту магазину"
+    ]
+  },
+  {
+    "id": "B2",
+    "category": "compatibility",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Яку відеокарту з наявних у каталозі краще обрати для збірки з процесором Ryzen 5 9600X та блоком живлення на 650W?",
+    "ground_truth_facts": [
+      "Враховано ліміт потужності БЖ (650W) та TDP/рекомендації відеокарти",
+      "Згадано реальні моделі та ціни в $ з каталогу"
+    ]
+  },
+  {
+    "id": "B3",
+    "category": "compatibility",
+    "language": "en",
+    "expected_ui_lang": "en",
+    "prompt": "Would an RTX 4080 Super work smoothly with a 650W power supply, or should I choose a higher wattage PSU?",
+    "ground_truth_facts": [
+      "Correctly evaluates power draw and PSU headroom for RTX 4080 Super",
+      "Gives clear technical guidance without inventing store stock"
+    ]
+  },
+  {
+    "id": "B4",
+    "category": "compatibility",
+    "language": "de",
+    "expected_ui_lang": "de",
+    "prompt": "Worauf muss ich bei der Kompatibilität von CPU, Mainboard und Arbeitsspeicher (DDR4 vs DDR5) achten?",
+    "ground_truth_facts": [
+      "Erklärt Sockel-, Chipsatz- und DDR4/DDR5-Kompatibilität korrekt",
+      "Antwortet präzise auf Deutsch mit Preisen in $ falls genannt"
+    ]
+  },
+  {
+    "id": "C1",
+    "category": "external_temporal",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Порівняй процесори Intel Core Ultra 9 285K та AMD Ryzen 9 9950X: у чому їхні ключові відмінності та для яких задач кращий кожен?",
+    "ground_truth_facts": [
+      "Коректно порівнює архітектуру/позиціонування Core Ultra 9 285K та Ryzen 9 9950X",
+      "Розрізняє сценарії продуктивності (робочі задачі vs ігри)"
+    ]
+  },
+  {
+    "id": "C2",
+    "category": "external_temporal",
+    "language": "en",
+    "expected_ui_lang": "en",
+    "prompt": "What are the main differences between PCIe 4.0 and PCIe 5.0 NVMe SSDs in real-world gaming and productivity?",
+    "ground_truth_facts": [
+      "Accurately contrasts PCIe 4.0 vs PCIe 5.0 bandwidth, thermals, and real-world impact",
+      "Concise and technically sound"
+    ]
+  },
+  {
+    "id": "C3",
+    "category": "external_temporal",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Які переваги та недоліки має технологія DLSS Frame Generation у сучасних іграх у порівнянні з нативним рендерингом?",
+    "ground_truth_facts": [
+      "Пояснює генерацію кадрів, вплив на FPS і затримку вводу (input latency)",
+      "Відповідь надана українською мовою"
+    ]
+  },
+  {
+    "id": "C4",
+    "category": "external_temporal",
+    "language": "de",
+    "expected_ui_lang": "de",
+    "prompt": "Welche Vorteile bietet 3D V-Cache bei Gaming-CPUs im Vergleich zu regulären Prozessoren?",
+    "ground_truth_facts": [
+      "Erklärt größeren L3-Cache und geringere Latenz bei spieleabhängigen Workloads",
+      "Antwortet auf Deutsch"
+    ]
+  },
+  {
+    "id": "D1",
+    "category": "out_of_catalog",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Скільки коштує у вас iPhone 16 Pro Max та чи є він зараз на складі?",
+    "ground_truth_facts": [
+      "Не вигадує ціну або наявність товару, якого немає в каталозі магазину",
+      "Чітко повідомляє про відсутність товару в контексті/каталозі або пропонує альтернативи з наявного"
+    ]
+  },
+  {
+    "id": "D2",
+    "category": "out_of_catalog",
+    "language": "en",
+    "expected_ui_lang": "en",
+    "prompt": "Do you have Dyson hair dryers or refrigerators in stock, and what are their prices?",
+    "ground_truth_facts": [
+      "Does not hallucinate prices or stock for items absent from the store context",
+      "Clearly indicates absence in the store catalog"
+    ]
+  },
+  {
+    "id": "D3",
+    "category": "out_of_catalog",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "Чи є у вас в наявності монітор OLED 240Hz за $50? Якщо ні — які є варіанти?",
+    "ground_truth_facts": [
+      "Критично оцінює нереалістичну ціну / відсутність позиції в каталозі",
+      "Не вигадує неіснуючі товари з такою ціною"
+    ]
+  },
+  {
+    "id": "D4",
+    "category": "out_of_catalog",
+    "language": "pl",
+    "expected_ui_lang": "pl",
+    "prompt": "Czy macie w sklepie konsole PlayStation 5 Pro oraz jaka jest ich cena?",
+    "ground_truth_facts": [
+      "Nie zmyśla dostępności ani ceny w katalogu sklepu",
+      "Odpowiada po polsku"
+    ]
+  },
+  {
+    "id": "E1",
+    "category": "multilingual_ui",
+    "language": "pl",
+    "expected_ui_lang": "pl",
+    "prompt": "Jaką kartę graficzną polecasz do grania w 1440p oraz jakie modele macie w ofercie?",
+    "ground_truth_facts": [
+      "Виведено тег [[UI_LANG:pl]]",
+      "Відповідь написана польською мовою"
+    ]
+  },
+  {
+    "id": "E2",
+    "category": "multilingual_ui",
+    "language": "es",
+    "expected_ui_lang": "es",
+    "prompt": "¿Qué tarjeta gráfica recomiendas para jugar en 1440p y qué modelos tenéis disponibles?",
+    "ground_truth_facts": [
+      "Виведено тег [[UI_LANG:es]]",
+      "Відповідь написана іспанською мовою"
+    ]
+  },
+  {
+    "id": "E3",
+    "category": "multilingual_ui",
+    "language": "fr",
+    "expected_ui_lang": "fr",
+    "prompt": "Quelle carte graphique recommandez-vous pour jouer en 1440p et quels modèles avez-vous en stock ?",
+    "ground_truth_facts": [
+      "Виведено тег [[UI_LANG:fr]]",
+      "Відповідь написана французькою мовою"
+    ]
+  },
+  {
+    "id": "E4",
+    "category": "multilingual_ui",
+    "language": "tr",
+    "expected_ui_lang": "none",
+    "prompt": "1440p oyun için hangi ekran kartını önerirsin ve mağazada hangi modeller var?",
+    "ground_truth_facts": [
+      "Мова поза списком 13 UI-мов -> очікується [[UI_LANG:none]] або відсутність перемикання UI",
+      "Асистент відповідає турецькою мовою"
+    ]
+  },
+  {
+    "id": "F1",
+    "category": "noisy_typos",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "підкажи чи норм буде rtx 4070 super до ryzen 5 9600x і скільки це коштує в доларах",
+    "ground_truth_facts": [
+      "Коректно розпізнано український намір попри англійські назви комплектуючих",
+      "Ціни подано у $ / USD"
+    ]
+  },
+  {
+    "id": "F2",
+    "category": "noisy_typos",
+    "language": "uk",
+    "expected_ui_lang": "uk",
+    "prompt": "посоветуй пліз норм проц для ігор та стрімінгу щоб не грівся сильно і ціна була адекватна",
+    "ground_truth_facts": [
+      "Адекватно оброблено запит із суржиком/розмовною лексикою",
+      "Надано корисні рекомендації щодо CPU та охолодження"
+    ]
+  },
+  {
+    "id": "F3",
+    "category": "noisy_typos",
+    "language": "en",
+    "expected_ui_lang": "en",
+    "prompt": "plz help pick good gpu for 1080p high fps under 600 bucks, what do u have?",
+    "ground_truth_facts": [
+      "Handles informal phrasing/abbreviations cleanly",
+      "Filters/suggests options relevant to budget and store context"
+    ]
+  },
+  {
+    "id": "F4",
+    "category": "noisy_typos",
+    "language": "de",
+    "expected_ui_lang": "de",
+    "prompt": "welche prozessors gibt hier für gaming und was kostet das ungefähr?",
+    "ground_truth_facts": [
+      "Handles typo ('prozessors') and recognizes German intent",
+      "Responds in German with prices in $"
+    ]
+  }
+]

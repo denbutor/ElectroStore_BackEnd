@@ -1,0 +1,86 @@
+[
+  {
+    "test_id": "AUTO_L_DB1",
+    "model": "lite",
+    "title": "Lite: пряма перевірка наявності павербанка Anker Prime (з БД)",
+    "message": "Підкажи, що це за модель павербанка, чи є вона у вас в наявності, яка ціна та для яких пристроїв підійде?",
+    "image_files": ["Anker Prime 27,650mAh 250W Power Bank.jpg"],
+    "expected_in_stock_keywords": ["anker", "250w", "$"]
+  },
+  {
+    "test_id": "AUTO_L_NEW1",
+    "model": "lite",
+    "title": "Lite: нове фото (images.jpg) + пошук альтернативи в магазині",
+    "message": "Що це за пристрій чи деталь на фото? Чи є такий товар у вас в наявності, а якщо немає — яка найближча альтернатива зі складу і в чому різниця?",
+    "image_files": ["images.jpg"],
+    "expected_in_stock_keywords": ["$"]
+  },
+  {
+    "test_id": "AUTO_L_SCR1",
+    "model": "lite",
+    "title": "Lite: аналіз скріншоту (Screenshot 131705) + fallback",
+    "message": "Проаналізуй скріншот, визнач характеристики чи модель і підбери сумісні або подібні товари з каталогу ElectroStore.",
+    "image_files": ["Screenshot 2026-11-22 131705.png"],
+    "expected_in_stock_keywords": ["$"]
+  },
+  {
+    "test_id": "AUTO_F_DB1",
+    "model": "flash",
+    "title": "Flash: порівняння 2 навушників із БД (Sony XM5 vs Beyerdynamic DT 770 PRO)",
+    "message": "Порівняй ці дві моделі навушників з фото: для яких задач краща кожна з них, чи є обидві в наявності у ElectroStore та які їхні ціни?",
+    "image_files": [
+      "Sony WH-1000XM5 Wireless Headphones.jpg",
+      "Beyerdynamic DT 770 PRO 80 Ohm.jpg"
+    ],
+    "expected_in_stock_keywords": ["sony", "beyerdynamic", "$"]
+  },
+  {
+    "test_id": "AUTO_F_DB2",
+    "model": "flash",
+    "title": "Flash: вибір мережевого обладнання з 3 фото з БД",
+    "message": "Який із цих маршрутизаторів найкраще підійде для великої квартири з гігабітним інтернетом, а який — для подорожей? Вкажи наявність і ціни в магазині.",
+    "image_files": [
+      "ASUS RT-AX86U Pro Wi-Fi 6 Router.jpg",
+      "TP-Link Deco XE75 Pro Wi-Fi 6E Mesh (2-Pack).jpg",
+      "GL.iNet GL-MT3000 Beryl AX Travel Router.jpg"
+    ],
+    "expected_in_stock_keywords": ["asus", "tp-link", "gl.inet", "$"]
+  },
+  {
+    "test_id": "AUTO_F_MIX1",
+    "model": "flash",
+    "title": "Flash: мікс фото (новий images (1) + скріншот 134816)",
+    "message": "Порівняй пристрій з першого фото та характеристики зі скріншоту. Що з цього є у вас в каталозі, чого немає і чим відрізняються наявні альтернативи?",
+    "image_files": [
+      "images (1).jpg",
+      "Screenshot 2026-11-22 134816.png"
+    ],
+    "expected_in_stock_keywords": ["$"]
+  },
+  {
+    "test_id": "AUTO_P_DB1",
+    "model": "pro",
+    "title": "Pro: мульти-аналіз робочого сетапу (iPad Pro + Galaxy Tab S9 + миші з БД)",
+    "message": "Проаналізуй усі 4 пристрої з каталогу для мобільної роботи та дизайну: порівняй планшети між собою, оціни ергономіку мишей і запропонуй 3 варіанти комплекту під різний бюджет.",
+    "image_files": [
+      "Apple iPad Pro 13-inch M4 256GB.jpg",
+      "Samsung Galaxy Tab S9 128GB.jpg",
+      "Logitech Lift Vertical Ergonomic Mouse.jpg",
+      "Keychron M3 Wireless Mouse.jpg"
+    ],
+    "expected_in_stock_keywords": ["ipad", "samsung", "logitech", "keychron", "$"]
+  },
+  {
+    "test_id": "AUTO_P_MIX2",
+    "model": "pro",
+    "title": "Pro: складний мультимодальний кейс (2 нові фото + 2 скріншоти)",
+    "message": "Знайди технічні відмінності та потенційні проблеми сумісності на цих зображеннях, чесно вкажи, які моделі є в ElectroStore, яких немає і які альтернативи варто розглянути у 3 цінових сегментах.",
+    "image_files": [
+      "images (2).jpg",
+      "images (3).jpg",
+      "Screenshot 2026-11-22 135602.png",
+      "Screenshot 2026-11-22 141010.png"
+    ],
+    "expected_in_stock_keywords": ["варіант", "$"]
+  }
+]

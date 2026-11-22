@@ -28,13 +28,40 @@ htmlcov/
 dist/
 
 # ==========================================
-# 4. ТЕСТОВІ ФАЙЛИ ТА ЛОГИ ПРОЄКТУ
+# 4. ТЕСТОВІ ФАЙЛИ, ЛОГИ ТА АРТЕФАКТИ ОЦІНЮВАННЯ
 # ==========================================
 ai_request.json
 ai_payload.json
 *.log
 *.sql
 *.dump
+
+# Звіти бенчмарку (за потреби можна закоментувати, якщо хочете версіонувати)
+tests/ai_benchmark/report/
+tests/ai_benchmark/reports/
+tests/ai_benchmark/reports_13lang/
+tests/ai_benchmark/reports_v2/
+
+# Артефакти та тимчасові файли в eval_results/
+eval_results/ai_service.log
+eval_results/*.png
+eval_results/*.jpg
+eval_results/fixtures/
+eval_results/per_test_evaluation.csv
+eval_results/evaluation_report.md
+eval_results/*_results.json
+eval_results/latency_breakdown.json
+eval_results/resilience_summary.md
+eval_results/summary_tables.md
+eval_results/table_*.md
+
+# Зберігаємо в репозиторії сценарії, датасети та ключові звіти/таблиці
+!eval_results/suite_runs.json
+!eval_results/test_cases.json
+!eval_results/negative_suite.json
+!eval_results/summary_tables.md
+!eval_results/resilience_summary.md
+!eval_results/evaluation_report.md
 
 # ==========================================
 # 5. НАЛАШТУВАННЯ IDE ТА РЕДАКТОРІВ
@@ -45,7 +72,7 @@ ai_payload.json
 *.swo
 
 # ==========================================
-# 6. СИС ТЕМНІ ФАЙЛИ (Windows / macOS)
+# 6. СИСТЕМНІ ФАЙЛИ (Windows / macOS)
 # ==========================================
 Thumbs.db
 Desktop.ini
