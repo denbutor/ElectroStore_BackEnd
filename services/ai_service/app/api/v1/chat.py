@@ -1,5 +1,6 @@
 import asyncio
 import json
+import re
 import time
 import httpx
 from fastapi import APIRouter, Depends, Request
@@ -15,11 +16,31 @@ from app.services.rag_service import RAGService
 
 router = APIRouter(prefix="/chat", tags=["AI Chat"])
 
+UI_LANG_TAG_RE = re.compile(r"^\s*\[\[UI_LANG\s*:\s*([a-zA-Z_-]+)\]\]\s*(?:\r?\n)?", re.IGNORECASE)
+
+SUPPORTED_UI_LANGS = {
+    "en": "English",
+    "uk": "Ukrainian",
+    "pl": "Polish",
+    "de": "German",
+    "es": "Spanish",
+    "fr": "French",
+    "it": "Italian",
+    "nl": "Dutch",
+    "da": "Danish",
+    "sv": "Swedish",
+    "cs": "Czech",
+    "fi": "Finnish",
+    "no": "Norwegian",
+}
+
 
 class ChatPayload(BaseModel):
     session_id: str
     message: str
     model_type: str | None = "flash"  # "lite" | "flash" | "pro"
+    preferred_lang: str | None = None
+    allow_ui_lang_switch: bool = True
 
 
 def _format_sse_data(text: str) -> str:
@@ -27,6 +48,13 @@ def _format_sse_data(text: str) -> str:
         return ""
     lines = text.split("\n")
     return "".join(f"data: {line}\n" for line in lines) + "\n"
+
+
+def _strip_ui_lang_tag(text: str) -> str:
+    """Видаляє службовий маркер [[UI_LANG:...]] з початку тексту перед збереженням у Redis."""
+    if not text:
+        return ""
+    return UI_LANG_TAG_RE.sub("", text, count=1).lstrip("\r\n")
 
 
 @router.get("/models")
@@ -64,13 +92,46 @@ async def chat_stream(
     # 2. Відновлюємо історію діалогу з Redis
     history = await memory_service.get_history(payload.session_id)
 
-    # 3. Системна інструкція з контекстом товарів
+    # 3. Системна інструкція з підтримкою 13 локалей UI та вільного спілкування будь-якою мовою
+    lang_hint = ""
+    if payload.preferred_lang and payload.preferred_lang in SUPPORTED_UI_LANGS:
+        lang_name = SUPPORTED_UI_LANGS[payload.preferred_lang]
+        lang_hint = (
+            f"The user's current UI language is {lang_name} ({payload.preferred_lang}). "
+            f"If the user's message is ambiguous or just a product/model name, reply in {lang_name}. "
+        )
+
+    supported_codes_str = ", ".join(SUPPORTED_UI_LANGS.keys())
+
+    if payload.allow_ui_lang_switch:
+        ui_lang_rule = (
+            "UI LANGUAGE ORCHESTRATION RULE (STRICT):\n"
+            f"Supported UI language codes are ONLY: [{supported_codes_str}].\n"
+            "At the very beginning of your response (before any other text), output a single control tag on the first line:\n"
+            "- Output `[[UI_LANG:<code>]]` (using one of the supported codes above) if the user writes a meaningful message (> 3 words) in that language "
+            "(even if it contains English hardware/brand names like 'AMD Ryzen 7 9800X3D' or 'RTX 4080'), "
+            "OR if the user explicitly asks to switch the site/UI language to one of those supported languages.\n"
+            "- Output `[[UI_LANG:none]]` if the message is short (<= 3 words), just a greeting, just a product/component name without a clear language switch request, "
+            "OR if the user writes in a language NOT in the supported UI list.\n"
+            "Regardless of whether the UI language switches or not, ALWAYS reply in the exact language the user wrote in (any language in the world).\n"
+            "Immediately after the closing `]]`, start your normal response.\n"
+        )
+    else:
+        ui_lang_rule = (
+            "UI LANGUAGE ORCHESTRATION RULE:\n"
+            "Automatic UI language switching is currently LOCKED. Do NOT output any `[[UI_LANG:...]]` tag at all.\n"
+            "Always reply in the language of the user's message (any language).\n"
+        )
+
     system_instruction = (
         "You are a professional consultant for the ElectroStore electronics shop. "
         "Your task is to help customers choose hardware, check component compatibility, and answer tech questions. "
         "Prioritize recommending products from the provided store context when available, "
         "but you may also use Google Search to find general technical specs, reviews, or info about external products. "
-        "Be concise, always reply in the same language as the user's message, and display all prices in US dollars ($ / USD).\n"
+        f"{lang_hint}"
+        "Be concise, always reply in the same language as the user's message (or the requested target language if they asked to switch), "
+        "and display all prices in US dollars ($ / USD).\n"
+        f"{ui_lang_rule}"
         f"{context_str}"
     )
 
@@ -178,11 +239,12 @@ async def chat_stream(
                 else:
                     yield f"data: [ПОМИЛКА: Усі моделі недоступні. {last_error}]\n\n"
 
-            if full_response_text:
+            cleaned_response = _strip_ui_lang_tag(full_response_text)
+            if cleaned_response:
                 await memory_service.save_interaction(
                     payload.session_id,
                     payload.message,
-                    full_response_text,
+                    cleaned_response,
                 )
         except Exception as exc:
             err_msg = f"{type(exc).__name__}: {exc}" if str(exc) else type(exc).__name__
