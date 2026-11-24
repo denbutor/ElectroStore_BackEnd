@@ -89,3 +89,5 @@ results/*.txt
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+services/ai_service/app/api/v1/chat copy.py
